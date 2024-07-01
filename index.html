@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Travel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+            font-family: Lucida Calligraphy;
+        
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        header {
+            background: url('https://wallpapercave.com/wp/wp11670746.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 60px;
+        }
+
+        header h1 {
+        
+            color: #1a1a1b;
+            margin-bottom: 1rem;
+            
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: #f9f9f9;
+            margin-bottom: 2rem;
+            
+        }
+        
+    
+
+        #places {
+            padding: 4rem 2rem;
+            background-color: #f4f4f4;
+            font-family:Lucida Calligraphy;
+    }
+
+
+        .places-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+       
+        .place {
+            flex-basis: calc(33.333% - 2rem);
+            margin: 1rem;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .place:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .place img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .place-info {
+            padding: 1.5rem;
+            font-family: Comic Sans MS;
+        }
+
+        .place h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-family: Lucida Calligraphy;
+        }
+
+        .place p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+
+        .place-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .place-btn:hover {
+            background-color: #2980b9;
+        }
+
+        #about {
+            background-color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-family: Bernard MT Condensed;
+        }
+
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #666;
+            font-family: Lucida Calligraphy;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex-basis: calc(33.333% - 2rem);
+            margin: 1rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: Segoe Print;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 1rem;
+            font-family: Arial Narrow;
+            font-size: 20px;
+        }
+
+        .footer-section ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #3498db;
+        }
+
+       
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            font-size: 1.5rem;
+            font-family: Segoe Print;
+        }
+
+        @media (max-width: 1024px) {
+            .place {
+                flex-basis: calc(50% - 2rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .place, .footer-section {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#places">Places</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+    </header>
+
+    <section id="places">
+        <h2>Unique Places to Visit</h2>
+        <div class="places-container">
+            <div class="place">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/81/30/3f/caption.jpg?w=1400&h=1400&s=1&cx=1846&cy=1833&chk=v1_6ae0a81ae3361e988707" alt="Santorini, Greece">
+                <div class="place-info">
+                    <h3>Santorini, Greece</h3>
+                    <p>Experience the stunning white-washed buildings and blue-domed churches overlooking the Aegean Sea.</p>
+                    <a href="#" class="place-btn">Read More</a>
+                </div>
+            </div>
+            <div class="place">
+                <img src="https://cdn.britannica.com/30/94530-050-99493FEA/Machu-Picchu.jpg" alt="Machu Picchu, Peru">
+                <div class="place-info">
+                    <h3>Machu Picchu, Peru</h3>
+                    <p>Explore the ancient Incan city nestled high in the Andes Mountains.</p>
+                    <a href="#" class="place-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="place">
+                <img src="https://www.hertz.com/content/dam/hertz/global/blog-articles/planning-a-trip/kyoto-japan/kyoto-header.jpg" alt="Kyoto, Japan">
+                <div class="place-info">
+                    <h3>Kyoto, Japan</h3>
+                    <p>Immerse yourself in Japanese culture with numerous temples and historic districts.</p>
+                    <a href="#" class="place-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="place">
+                <img src="https://res.cloudinary.com/lastminute-contenthub/s--1FBiktHL--/c_limit,h_999999,w_1920/f_auto/q_auto:eco/v1/DAM/Photos/Destinations/Asia/Indonesia/Bali/shutterstock_380725909" alt="Bali, Indonesia">
+                <div class="place-info">
+                    <h3>Bali, Indonesia</h3>
+                    <p>Discover lush rice terraces, pristine beaches, and vibrant cultural experiences.</p>
+                    <a href="#" class="place-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="place">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcbgyGJ1_Upau1Dt7k8dQSGAyzYTP3cEJ5-A&s" alt="Cappadocia, Turkey">
+                <div class="place-info">
+                    <h3>Cappadocia, Turkey</h3>
+                    <p>Float over surreal landscapes in a hot air balloon and explore unique cave dwellings.</p>
+                    <a href="#" class="place-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="place">
+                <img src="https://assets.wwf.org.au/image/upload/f_auto/q_auto/v1676248322/img_coral_great_barrier_reef.jpg" alt="Great Barrier Reef, Australia">
+                <div class="place-info">
+                    <h3>Great Barrier Reef, Australia</h3>
+                    <p>Dive into the world's largest coral reef system and witness incredible marine life.</p>
+                    <a href="#" class="place-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Wanderlust Travel Stories</h2>
+        <p>At Wanderlust Travel Stories, we believe that exploring the world is not just about visiting new places, but about immersing yourself in diverse cultures, creating unforgettable memories, and broadening your horizons. Our passion is to help you discover the most breathtaking destinations and hidden gems across the globe, ensuring that every journey you take with us is nothing short of extraordinary.</p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#places">Destinations</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#about">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: info@wanderlust.com</li>
+                    <li>Phone: +91 123-4567</li>
+                    <li>Address: 123 Travel St, Mumbai City, 54321</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Wanderlust Travel Stories. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
